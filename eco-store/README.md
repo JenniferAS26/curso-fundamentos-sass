@@ -31,14 +31,14 @@ Para asignar un valor se hace uso del simbolo $ de esta manera es posible refere
 
 ```
 
-<em>CSS Varibles</em>
+<em>CSS Variables</em>
     - Pueden tener diferentes valores para distintos elementos
     - Son declarativas
-<em>SASS Varibles</em>
+<em>SASS Variables</em>
     - Tienen un valor único correspondiente a un elemento
     - Son imperativas
 
-<em>!default flag</em>
+<em>!default flag:</em>
 Se encarga de asignar un valor a la variable si y solo si esta variable no está definida o su valor es null.
 
 ## Uso de selectores, scope de las variables y shadowing
@@ -50,4 +50,15 @@ Ecisten selectores de tipo:
     - Tipo
     - Atributo
 
-<em>¿Qué es el Scope?</em>
+### <em>¿Qué es el Scope?</em>
+El scope dentro de SASS hace referecia al contexto en el que son declaradas las variables donde es posible hacer uso de las mismas
+#### <em>Variables locales</em>
+- Las variables locales estan declaradas dentro de un bloque {}
+- Cualquier selector anidado puede acceder a las variables locales declaradas dentro del selector
+
+#### <em>Variables globales</em>
+Por defecto, todas las variables declarads fuera de un selector son variables globales, esto significa que podemos acceder a ellas en cualquier parte de nuestra hoja de estilos.
+
+#### <em>Shadowing</em>
+Las variables locales y globales pueden tener los mismo nombres ya que se encuentran en diferente nivel de scope.
+Esto puede ayudar a que no se llegue a modificar por error el valor de las variables globales.
