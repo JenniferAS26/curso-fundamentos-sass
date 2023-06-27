@@ -1,10 +1,78 @@
-$primary-color: #ffefe7;
+$primary-color: #ffefe7; /* Expresiones de color */
 $secondaty-color: #ffdac6;
 $tertiary-color: #babd8d;
 $primary-text-color: #7c6a0a;
-$font-stack: 'IBM Plex Sans', sans-serif;
+$quaternion-color: #fa9500;
+$font-stack: 'IBM Plex Sans', sans-serif; /* Expresiones String */
+$paragraph-size: 1.5em;
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px; /* Expresiones Número */
+    padding: 0px;
+    background-color: $primary-color;
+    font-family: $font-stack;
+}
+
+nav {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    color: $primary-text-color;
+    padding: 15px;
+    p {
+        font-size: $paragraph-size;
+        padding-left: 30px;
+    }
+    .icons {
+        display: flex;
+        gap: 15px;
+        button {
+            border-style: none;
+            background: none;
+        }
+    }
+}
+
+article {
+    width: auto;
+    color: $primary-text-color;
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    justify-content: space-between;
+    .impact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 50px;
+    }
+    h1 {
+        font-size: 3em;
+        padding: 0px;
+        margin: 0px;
+    }
+    p {
+        font-size: $paragraph-size;
+    }
+    button {
+        width: 12vw;
+        padding: 20px;
+        background-color: $quaternion-color;
+        border-style: none;
+        border-radius: 35px;
+        color: white;
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+    img {
+        width: 25vw;
+        border-radius: 19px;
+    }
+}
+
+
+footer {
+    background-color: $quaternion-color;
+    width: 100%;
+    height: 250px;
 }

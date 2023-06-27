@@ -62,3 +62,51 @@ Por defecto, todas las variables declarads fuera de un selector son variables gl
 #### <em>Shadowing</em>
 Las variables locales y globales pueden tener los mismo nombres ya que se encuentran en diferente nivel de scope.
 Esto puede ayudar a que no se llegue a modificar por error el valor de las variables globales.
+
+#### <em>At-rules CSS</em>
+Es una declaración que cumple con diferentes funciones, se inicializa con el símbolo @ y cuenta con sintaxis propia.
+Las at-rules dentro de SASS ayudan a mantener la compatibilidad con proximas versiones de CSS.
+    - @use --> Nos ayuda a importar los modulos, estilos y funciones de otras hojas de estilos
+    - @import --> Se encarga de importar los estilos globales
+    - @function --> Nos permite crear funciones personalizadas, pero SASS cuenta con funciones ya existentes
+    - @forward --> Recibe como parametro una URL y nos ayuda a cargar los estilos de nuestra hoja de estilos
+    - @extend --> Tiene que ver con el concepto de herencia ******
+    - @at-root --> Se encarga de cargar nuestros estilos en el root de nuestro CSS
+Dentro de las reglas que tienen que ver con la compilación podemos encontrar
+    - @error: error en la compilación, @warn: alerta de modificación, @debug: para encontrar los errores de una manera más sencilla
+    - @include: nos ayuda a invocar los mixins
+    - @for, @if, @each, @while tienen que ver con estructuras de control
+
+#### <em>Nesting</em>
+- La anidación permite tener selectores dentro de otros, lo cual nos ayuda a simplificar el código
+- Escribiendo los selectores en el orden en que aparecen en el HTML
+
+```
+    nav {
+        ul {
+            margin: 4px;
+            padding: 5px;
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+        }
+        a {
+            display: block;
+            pading: 6px 12px;
+            text-decoration: none;
+        }
+    }
+```
+
+### <em>Expresiones</em>
+Una expresión es todo aquello que va del lado derecho de una variable, admitiendo varios tipos de valores.
+Las expresiones son mucho más poderosas que los valores CSS simples, ya que se pasan como argumentos a mixins y funciones
+#### Expresiones
+    - Números
+    - Strings
+    - Colores
+    - Booleanos
+    - Null
+    - Listas
+    - Mapas
