@@ -129,3 +129,71 @@ La directive <em>@extend</em> de SASS nos permite organizaaaa código y crear CS
         }
     }
 ```
+
+## <em>Mixins</em>
+Los mixins permiten definir estilos que se pueden reutilizar en toda su hoja de estilos y facilitan evitar el uso de clases no semánticas.
+
+### <em>Uso de mixins en SASS</em>
+Se declara con la regla @mixin seguido del nombre que queremos asignar y se invoca con @include seguido del nombre del mixin.
+```
+    @mixin horizontal-list {
+        li {
+            display: inline-block;
+            margin: {
+                left: -2px;
+                right: 2em;
+            }
+        }
+    }
+
+    nav ul {
+        @include horizontal-list;
+    }
+```
+### <em>Argumentos en mixins</em>
+- Un argumento es el nombre de una variable que está separada por una coma.
+- La utilidad de los mixins no sería tal si no tuvieran la capacidad de recibir argumentos.
+```
+    @mixin circle2 ($width, $height, $color) {
+        width: $width;
+        height: $height;
+        background: $color;
+    }
+```
+
+## <em>Funciones en SASS</em>
+Las funciones permiten definir operaciones complejas en valores de SASS.
+Las funciones se definen usando a regla @function.
+SASS como preprocesador tiene una gran cantidad de funciones. Algunos de los ejemplos son:
+    - Funciones RGB
+    - Funciones HSL
+    - Funciones de opacidad
+    - Funciones sobre strings
+    - Funciones sobre números
+### <em>Operaciones</em>
+SASS es compatible con una gran cantidad de operadores útiles para trabajar con diferentes valores. Estos incluyen los operadores matemáticos estándar y operadores para varios otros tipos, por ejemplo: == y !=.
+#### <em>Jerarqu+ia de operaciones</em>
+    1. Los operadores unarios not, + y -
+    2. Los operadores *, / y %
+    3. Los operadores + y -
+    4. Los operadores >, >=, < y >=
+    5. Los operadores de comparación == y !=
+    6. El operadore lógico and
+    7. El operadore lógico or
+    8. El operador de asignación =
+### <em>Declaración de una función</em>
+Las funciones se llaman utilizando la sintaxis de función CSS normal
+```
+    @function pow($base, $exponent) {
+        $result: 1;
+        @for $_ from 1 through $exponent {
+            $result: $result * $base;
+        }
+        @return $result;
+    }
+
+    .sidebar {
+        float: left;
+        margin-left: pow(4, 3) * 1px;
+    }
+```
