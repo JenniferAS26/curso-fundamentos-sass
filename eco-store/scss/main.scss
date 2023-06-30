@@ -38,6 +38,8 @@ article {
     color: $primary-text-color;
     padding-left: 45px;
     padding-right: 45px;
+    padding-top: 60px;
+    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     .impact-section {

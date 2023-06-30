@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* Expresiones de color */
+/* Expresiones String */
+body {
+  margin: 0px; /* Expresiones Número */
+  padding: 0px;
+  background-color: #ffefe7;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+nav {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  color: #7c6a0a;
+  padding: 15px;
+}
+nav p {
+  font-size: 1.5em;
+  padding-left: 30px;
+}
+nav .icons {
+  display: flex;
+  gap: 15px;
+}
+nav .icons button {
+  border-style: none;
+  background: none;
+}
+
+article {
+  width: auto;
+  color: #7c6a0a;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 60px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+article .impact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 50px;
+}
+article h1 {
+  font-size: 3em;
+  padding: 0px;
+  margin: 0px;
+}
+article p {
+  font-size: 1.5em;
+}
+article button {
+  width: 12vw;
+  padding: 20px;
+  background-color: #fa9500;
+  border-style: none;
+  border-radius: 35px;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+article img {
+  width: 25vw;
+  border-radius: 19px;
+}
+
+footer {
+  background-color: #fa9500;
+  width: 100%;
+  height: 250px;
+}/*# sourceMappingURL=main.css.map */
