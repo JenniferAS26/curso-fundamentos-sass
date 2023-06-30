@@ -1,0 +1,222 @@
+$primary-color: #ffefe7; /* Expresiones de color */
+$secondary-color: #ffdac6;
+$tertiary-color: #babd8d;
+$primary-text-color: #7c6a0a;
+$quaternary-color: #fa9500;
+$font-stack: 'IBM Plex Sans', sans-serif; /* Expresiones String */
+$paragraph-size: 1.5em;
+
+@mixin flexCenter($direction, $content, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+@mixin buttonStyle {
+    button {
+        background: none;
+        border-style: none;
+    }
+}
+
+body {
+    margin: 0px; /* Expresiones Número */
+    padding: 0px;
+    background-color: $primary-color;
+    font-family: $font-stack;
+}
+
+nav {
+    width: auto;
+    @include flexCenter(row, space-between, center);
+    color: $primary-text-color;
+    padding: 15px;
+    p {
+        font-size: $paragraph-size;
+        padding-left: 30px;
+    }
+    .icons {
+        display: flex;
+        gap: 15px;
+        @include buttonStyle();
+    }
+}
+
+article {
+    width: auto;
+    color: $primary-text-color;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 60px;
+    @include flexCenter(row, space-between, center);
+    .impact-section {
+        @include flexCenter(column, space-evenly, flex-start);
+        gap: 25px;
+        padding-top: 50px;
+    }
+    h1 {
+        font-size: 3em;
+        padding: 0px;
+        margin: 0px;
+    }
+    p {
+        font-size: $paragraph-size;
+    }
+    @include buttonStyle;
+    button {
+        width: 180px;
+        padding: 20px;
+        background-color: $quaternary-color;
+        border-radius: 35px;
+        color: white;
+        font-size: 1em;
+        letter-spacing: 2px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    img {
+        width: 25vw;
+        border-radius: 19px;
+    }
+}
+
+section {
+    width: auto;
+    height: auto;
+    padding: 60px;
+    h2 {
+        color: $primary-text-color;
+        font-size: 2em;
+    }
+    .healthcare {
+        padding-bottom: 60px;
+        h2 {
+            font-weight: 300;
+            padding-bottom: 60px;
+        }
+        .card-section {
+            @include flexCenter(row, space-evenly, center);
+            width: auto;
+            height: auto;
+            flex-wrap: wrap;
+            column-gap: 100px;
+            row-gap: 80px;
+        }
+        .product-card {
+            width: 14vw;
+            height: 55vh;
+            background-color: $secondary-color;
+            color: $primary-text-color;
+            padding: 20px 20px 30px 20px;
+            border-radius: 8px;
+            .icon {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 12px;
+                svg {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            .product-image {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 13vw;
+                    height: 30vh;
+                    object-fit: cover;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+    .furniture {
+        @extend .healthcare;
+        .product-card {
+            background-color: $tertiary-color;
+            color: white;
+        }
+    }
+}
+
+.about-us {
+    padding-bottom: 60px;
+    h2 {
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .mission-section {
+        @include flexCenter(row, space-evenly, center);
+        .earth {
+            $text-color: #e86424 ;
+            width: 30vw;
+            display: flex;
+            gap: 40px;
+            color: $text-color;
+            img {
+                object-fit: contain;
+            }
+            p {
+                text-align: center;
+                font-size: $paragraph-size;
+            }
+        }
+    }
+    .innovation {
+        @extend .earth;
+    }
+}
+.gallery {
+    h2 {
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .gallery-images {
+        @include flexCenter(row, space-between, center);
+        img {
+            width: 28vw;
+            height: 43vh;
+            object-fit: cover;
+            object-position: 5px 35%;
+            border-radius: 16px;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.location {
+    $text-color: #e86424;
+    color: $text-color;
+    h2 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .map {
+        @include flexCenter(row, center, center);
+        padding-bottom: 50px;
+    }
+    h3, p {
+        font-size: $paragraph-size;
+    }
+}
+
+footer {
+    background-color: $quaternary-color;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    color: white;
+    .social-media {
+        @include flexCenter(row, center, center);
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+}
